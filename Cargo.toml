@@ -1,0 +1,11 @@
+[package]
+name = "etk-odin"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+etk-asm = "0.1.0"
+evmodin = { git = "https://github.com/wolflo/evmodin.git", features = ["test-evm"] }
+ethereum-types = { version = "0.12", default-features = false }
+tokio = { version = "1.5", features = ["macros", "rt-multi-thread"] }
+hex-literal = "0.3"
