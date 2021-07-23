@@ -8,7 +8,7 @@ async fn main() {
     // Bytecode to run.
     // Note that testing this snippet directly requires control of stack, memory, and returndata.
     // It expects a memory pointer to an arbitrary prefix on the stack, followed
-    // by the prefix's length. It should returns the prefix ++ forwarded returndata.
+    // by the prefix's length. It should return the prefix ++ forwarded returndata.
     let opcodes = r#"
         returndatasize
         push1 0x00
@@ -28,7 +28,7 @@ async fn main() {
     let mut ingest = Ingest::new(&mut code);
     ingest.ingest("", &opcodes).unwrap();
 
-    // Prepare a message to execute
+    // Prepare a message to execute with evmodin
     let message = Message {
         kind: CallKind::Call,
         is_static: true,
@@ -72,7 +72,7 @@ async fn main() {
             create_address: None,
         };
 
-    assert_eq!(Output::from(result.unwrap()), expected);
+    assert_eq!(result.unwrap(), expected);
 }
 
 // bytecode stack annotation
