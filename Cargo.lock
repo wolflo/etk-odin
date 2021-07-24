@@ -202,9 +202,8 @@ dependencies = [
 
 [[package]]
 name = "etk-asm"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d99ad26956f24ea1204f18057668da3a725b33142e275412beca1d025bdea5bb"
+version = "0.2.0-dev"
+source = "git+https://github.com/quilt/etk.git#9912b33f9e997fd40a4df90f8848ce20f0885bf4"
 dependencies = [
  "hex",
  "pest",
